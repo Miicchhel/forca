@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <header>
+        <img class="logo-alura" src="./img/img-alura.png" alt="Logo da Alura">
+    </header>
+
+    <main>
+        <div id="container-inicio">
+            <button class="btn-inicio-cima btn cima" id="iniciar-jogo">Começar a jogar</button>
+            <button class="btn-inicio-baixo btn baixo" id="adicionar-palavra" onclick="mudarTela('#container-inicio','#container-add-palavra')">Adicionar nova palavra</button>
+        </div>
+
+        <div id="container-add-palavra">
+            <input class="adicionando-palavra" type="text" id="adicionando-palavra" placeholder="Digite uma palavra">
+            <button class="btn-cima btn cima" id="salvar-comecar">Salvar e começar</button>
+            <button class="btn-baixo btn baixo" id="cancelar-jogo" onclick="mudarTela('#container-add-palavra','#container-inicio')">Cancelar</button>
+        </div>
+    </main>
+    
+    <footer>
+        <span>2022 &#169;  - Desenvolvido por Michel Ferreira</span>
+        <div class="redes-sociais">
+            <div class="github"></div>
+            <span class="linkedin"></span>
+            <!-- <a href="https://github.com/Miicchhel"><img class="github" src="./img/github.png" alt="Imagem Github"></a>
+            <a href="https://www.linkedin.com/in/michel-ferreira-90746a54/"><img class="linkedin" src="./img/linkedin.png" alt="Imagem linkedin"></a> -->
+        </div>
+    </footer>
+
+    <script src="./scripts/funcoes.js"></script>
+    <script src="./scripts/addPalavra.js"></script>
+</body>
+</html>
