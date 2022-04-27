@@ -106,9 +106,10 @@ main{
 /* pé */
 footer{
     text-align: center;
+    position: relative;
+    bottom: 0;
 }
 
 footer a{
     text-decoration: none;
-    tex
 }
