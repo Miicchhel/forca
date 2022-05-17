@@ -37,7 +37,7 @@ main{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .btn{
@@ -49,14 +49,14 @@ main{
     border-radius: 24px;
 }
 
-.cima{
+.btn-cima{
     border:0;
     color:white;
     margin-bottom: 10px;
     background-color: darkblue;
 }
 
-.baixo{
+.btn-baixo{
     border:0;
     color:rgb(0, 0, 0);
     margin-bottom: 10px;
@@ -81,7 +81,7 @@ main{
     align-items: center;
 }
 
-input{
+.texto-palavra{
     width: 343px;
     height: 20%;
     font-size: 28px;
@@ -96,6 +96,111 @@ input{
     align-items: center;
 }
 
+#container-jogando{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    position: relative;
+
+    /* background-color: chartreuse; */
+}
+
+.instrucoes{
+    width: 315px;
+    height: 135px;
+    padding: 10px;
+    background-color: rgb(253, 253, 253);
+
+    position: absolute;
+    top:150px;
+    left:22px;
+    font-size: 20px;
+
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.bom-jogo{
+    padding: 15px;
+    color: white;
+    border-radius: 24px;
+    display: inline-block;
+    background-color: #15378b;
+
+    position: absolute;
+    top:100px;
+    left:100px;
+}
+
+.remover-instrucoes{
+    opacity:0;
+}
+
+.area-desenho{
+    /* width: 80%; */
+    height: 40%;
+    margin: 0 auto;
+    /* background-color: burlywood; */
+}
+
+.aviso{
+    margin:12px 0 0 50px;
+}
+
+.forca {
+    fill: transparent;
+    stroke: #000;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.forca-parte {
+    display: none;
+}
+
+.area-palavra-secreta{
+    width: 80%;
+    height: 20%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    /* background-color: rgb(109, 152, 218); */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 24px;
+
+}
+
+.area-erros{
+    /* width: 80%; */
+    height: 20%;
+    margin: 0 auto;
+    font-size: 20px;
+    /* background-color: rgb(222, 135, 135); */
+}
+
+.area-palavra-secreta p,.area-erros p{
+    margin:5px;
+}
+
+.btn-jogando{
+    position: absolute;
+    top: 431px;
+
+    flex-direction: row;
+}
+
+.btn-joga{
+    width: 148px;
+    height: 46px;
+    min-width: 148px;
+    min-height: 46px;
+}
+
 /* pé */
 footer{
     height: 5%;
@@ -104,4 +209,22 @@ footer{
 
 footer a{
     text-decoration: none;
+}
+
+/*TABLET*/
+@media screen and (min-width:768px){
+    .botoes{
+        justify-content: space-evenly;
+    }
+
+    .aviso{
+        margin:12px 0 0 185px;
+    }
+}
+
+/*DESKTOP*/
+@media screen and (min-width:1024px){
+    .aviso{
+        margin:12px 0 0 350px;
+    }
 }
