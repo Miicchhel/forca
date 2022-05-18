@@ -11,6 +11,11 @@ iniciandoJogo.addEventListener("click",() => {
     
     mudarTela('.tela-inicio','.tela-jogando')
     mostrarQuantidadeLetras()
+    
+    document.querySelector(".paracelular").value = ''
+    document.querySelector("html").addEventListener("click", () => {
+        document.querySelector(".paracelular").focus();
+    });
 
     document.addEventListener("keydown", (evento) => {
         const codigo = evento.keyCode; //intervalo[65-90]
