@@ -1,230 +1,110 @@
-/*Smartphone*/
-body{
-    height: 100vh;
-    background-color: lightblue;
+*{
+    font-size: 62.5%;
 }
 
-/* cabeça */
+body{
+    height: 100vh;
+    background-color: #F3F5FC;
+}
+
 header{
-    width: 100%;
     height: 10%;
-    position: relative;
 }
 
 .logo-alura{
     position: absolute;
-    left: 4.27%;
-    top: 25%;
+    top: 15px;
+    left: 15px;
 }
 
 main{
-    width: 100%;
-    height: 85%;
+    height: 80%;
+    font-size: 1.2rem;
 }
 
-#container-inicio{
+.tela-inicio{
     height: 100%;
+    width: auto;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.btn,input{
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    /* box-sizing: border-box; */
+svg{
+    height: 14.5rem;
+}
+
+.botoes-tela-inicio{
+    height: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .btn{
-    width: 300px;
-    height: 67px;
-    font-size: 18px;
-    min-width: 300px;
-    min-height: 50px;
-    border-radius: 24px;
+    padding: 15px;
+    border-radius: 15px;
+    font-size:1.2rem;
 }
 
-.btn-cima{
-    border:0;
-    color:white;
-    margin-bottom: 10px;
-    background-color: darkblue;
+.btn-um{
+    border: none;
+    color: white;
+    background-color: #0A3871;
 }
 
-.btn-baixo{
-    border:0;
-    color:rgb(0, 0, 0);
-    margin-bottom: 10px;
-    background-color: rgb(255, 255, 255);
+.btn-dois{
+    border: 1px solid #0A3871;
+    color:#0A3871;
+    background-color: #0a387100;
+
 }
 
-.btn-inicio-cima{
-    width: 325px;
-    height: 80px;
-}
-
-.btn-inicio-baixo{
-    width: 290px;
-    height: 56px;
-}
-
-#container-add-palavra{
+.tela-jogando{
     height: 100%;
+    width: auto;
+
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes-tela-jogando, .botoes-add-palavra{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.tela-add-palavra{
+    height: 100%;
+    width: auto;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
 .texto-palavra{
-    width: 343px;
-    height: 20%;
-    font-size: 28px;
-}
-
-.botoes{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#container-jogando{
     width: 100%;
     height: 100%;
-    display: none;
-    flex-direction: column;
-    position: relative;
+    border: none;
+    text-align: center;
+    background-color: #F3F5FC;
 
-    /* background-color: chartreuse; */
+    font-size: 2rem;
 }
 
-.instrucoes{
-    width: 315px;
-    height: 135px;
-    padding: 10px;
-    background-color: rgb(253, 253, 253);
-
-    position: absolute;
-    top:150px;
-    left:22px;
-    font-size: 20px;
-
-    transition: transform 0.3s ease-in-out;
-    opacity: 1;
-}
-
-.bom-jogo{
-    padding: 15px;
-    color: white;
-    border-radius: 24px;
-    display: inline-block;
-    background-color: #15378b;
-
-    position: absolute;
-    top:100px;
-    left:100px;
-}
-
-.remover-instrucoes{
-    opacity:0;
-}
-
-.area-desenho{
-    /* width: 80%; */
-    height: 40%;
-    margin: 0 auto;
-    /* background-color: burlywood; */
-}
-
-.aviso{
-    margin:12px 0 0 50px;
-}
-
-.forca {
-    fill: transparent;
-    stroke: #000;
-    stroke-width: 4px;
-    stroke-linecap: round;
-}
-
-.forca-parte {
-    display: none;
-}
-
-.area-palavra-secreta{
-    width: 80%;
-    height: 20%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    /* background-color: rgb(109, 152, 218); */
+footer{
+    height: 10%;
 
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
-    
-    font-size: 24px;
-
-}
-
-.area-erros{
-    /* width: 80%; */
-    height: 20%;
-    margin: 0 auto;
-    font-size: 20px;
-    /* background-color: rgb(222, 135, 135); */
-}
-
-.area-palavra-secreta p,.area-erros p{
-    margin:5px;
-}
-
-.btn-jogando{
-    position: absolute;
-    top: 431px;
-
-    flex-direction: row;
-}
-
-.btn-joga{
-    width: 148px;
-    height: 46px;
-    min-width: 148px;
-    min-height: 46px;
-}
-
-/* pé */
-footer{
-    height: 5%;
-    text-align: center;
-}
-
-footer a{
-    text-decoration: none;
-}
-
-/*TABLET*/
-@media screen and (min-width:768px){
-    .botoes{
-        justify-content: space-evenly;
-    }
-
-    .aviso{
-        margin:12px 0 0 185px;
-    }
-}
-
-/*DESKTOP*/
-@media screen and (min-width:1024px){
-    .aviso{
-        margin:12px 0 0 350px;
-    }
+    align-items: center;
 }

@@ -85,15 +85,15 @@ function checarJogo(){
     }
 }
 
-// mudarTela('#container-add-palavra','#container-jogando')
-
 function addNovaPalavra(){
     const palavraNova = document.querySelector('#texto-palavra')
     const btn = document.querySelector('#salvar-comecar')
 
     btn.addEventListener('click',()=>{
-        palavras.push(palavraNova.value)
-        mudarTela('#container-add-palavra','#container-jogando')
+        let palavra = palavraNova.value
+        console.log(palavra.toUpperCase())
+        palavras.push(palavra.toUpperCase())
+        mudarTela('.tela-add-palavra','.tela-inicio')
     })
     
 }
