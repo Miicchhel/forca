@@ -1,87 +1,37 @@
-function mudarTela(atual, proxima){
-    var containerAtual = document.querySelector(atual);
-    containerAtual.style.display = "none";
-
-    var containerProximo = document.querySelector(proxima);
-    containerProximo.style.display = "flex";
-}
-
 function reiniciarJogo(){
     window.location.reload()
 }
 
-function isLetra(codigo){
-    return (codigo >= 65) && (codigo <= 90)
+function escolherPalavra(lista){
+    let palavra = lista[Math.floor(Math.random(listaPalavras)*listaPalavras.length)]
+    return palavra
 }
 
-function mostrarAvisoLetraRepetida(){
-    alert("você já digitou essa letra!")
-}
-
-function atualizarJogo(){
-    mostrarLetrasErradas()
-    mostrarLetrasCorretas()
-    desenharBoneco()
-    checarJogo()
-}
-
-function mostrarQuantidadeLetras(){
-    let espacos = ''
-    for(let i = 0; i < palavraSecreta.length; i++){
-        espacos += '_ '
-    }
-    const container = document.querySelector('.palavra-secreta')
-    container.innerHTML = espacos
-}
-
-function mostrarLetrasErradas(){
-    const div = document.querySelector(".area-erros")
-    div.innerHTML = ''
-    letrasErradas.forEach(letra => {
-        div.innerHTML += `<span> ${letra}</span>`
-    })
-}
-
-function mostrarLetrasCorretas(){
-    if(letrasCorretas.length === 0){
-        mostrarQuantidadeLetras()
-    }else{
-        const div = document.querySelector(".palavra-secreta")
-        div.innerHTML = ''
-        palavraSecreta.split('').forEach(letra => {
-            if(letrasCorretas.includes(letra)){
-                div.innerHTML += `<span>${letra}</span>`
-            }else{
-                div.innerHTML += '_ '
-            }
-        })
+function mostrarDica(palavra){
+    for(let i = 0; i < palavra.length; i++){
+        showDica.innerHTML += `<span class='l${i}'>_</span>`
     }
 }
 
-function desenharBoneco(){
-    const parteCorpo = document.querySelectorAll(".forca-parte")
-    for(let i = 0; i < letrasErradas.length; i++){
-        parteCorpo[i].style.display = "block"
+function mostrarLetra(letra){
+    for(let i = 0; i < palavra.length; i++){
+        if(palavra[i]==letra){
+            document.querySelector(`.l${i}`).innerHTML = letra
+        }
     }
 }
 
-function checarJogo(){
-    const checkPalavra = document.querySelector('.palavra-secreta')
-    let msg = ''
+function mostrarBoneco(erro){
+    showBoneco[erro].style.display = 'block'
+}
 
-    if(letrasErradas.length === 6){
-        msg = "Fim de Jogo. Você perdeu!"
-    }
-
-    if(palavraSecreta === checkPalavra.innerText){
-        msg = "Parabéns, você ganhou!"
-    }
-
-    if(msg){
+function analizarJogo(){
+    parada = document.querySelector('.show-dica').innerText
+    if(parada == palavra){
         setTimeout(()=>{
-            alert(msg)
-            reiniciarJogo()
-        },50)
+            alert('Você venceu!')
+        },500)
+        reiniciarJogo()
     }
 }
 
@@ -92,8 +42,46 @@ function addNovaPalavra(){
     btn.addEventListener('click',()=>{
         let palavra = palavraNova.value
         console.log(palavra.toUpperCase())
-        palavras.push(palavra.toUpperCase())
+        listaPalavras.push(palavra.toUpperCase())
         mudarTela('.tela-add-palavra','.tela-inicio')
     })
+}
+
+function mudarTela(atual, proxima){
+    var containerAtual = document.querySelector(atual);
+    containerAtual.style.display = "none";
+
+    var containerProximo = document.querySelector(proxima);
+    containerProximo.style.display = "flex";
+}
+
+function ligarTeclado(){
+
+    teclado.addEventListener('click',function(teclas){
+        let letraTeclado = teclas.target.innerText
+        let letraSelecionada = document.querySelector(`.${letraTeclado}`)      
     
+        if(palavra.includes(letraTeclado)){
+            mostrarLetra(letraTeclado)
+            analizarJogo()
+            letraSelecionada.style.backgroundColor = 'green'
+            acertos += 1
+        }else{
+            letraSelecionada.style.backgroundColor = 'red'
+
+            if(erros < showBoneco.length-1){
+                mostrarBoneco(erros)
+                erros += 1
+            }
+            else{
+                mostrarBoneco(erros)
+                setTimeout(()=>{
+                    alert('Você perdeu!')
+                },500)
+                reiniciarJogo()
+            }
+        }
+        letraSelecionada.style.color = 'white'
+    })
+
 }

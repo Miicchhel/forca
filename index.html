@@ -24,65 +24,84 @@
                 <button class="btn btn-dois" id="adicionar-palavra" onclick="mudarTela('.tela-inicio','.tela-add-palavra')">Adicionar nova palavra</button>
             </div>
         </div>
-        
+
         <div class="tela-jogando">
-            <textarea class="paracelular"></textarea>
-            <div class="area-desenho">
+            <div class="container-forca">
+        
+                <svg width="288" height="351" viewBox="0 0 288 351" fill="none" xmlns="http://www.w3.org/2000/svg" class="forca">
+        
+                    <rect x="0.675049" y="346.125" width="286.65" height="4.875" rx="2.4375" fill="#4C4347"/>
+                    <rect x="79.3325" width="173.306" height="4.3875" rx="2.19375" fill="#4C4347"/>
+                    <rect x="79.3325" width="4.3875" height="351" rx="2.19375" fill="#4C4347"/>
+                    <rect x="248.251" width="4.3875" height="48.2625" rx="2.19375" fill="#4C4347"/>
+        
+                    <!-- cabeça -->
+                    <path class="forca-parte" style="display: none"  fill-rule="evenodd" clip-rule="evenodd" d="M250.445 100.913C264.984 100.913 276.77 89.1264 276.77 74.5875C276.77 60.0486 264.984 48.2625 250.445 48.2625C235.906 48.2625 224.12 60.0486 224.12 74.5875C224.12 89.1264 235.906 100.913 250.445 100.913ZM250.445 105.3C267.407 105.3 281.157 91.5495 281.157 74.5875C281.157 57.6255 267.407 43.875 250.445 43.875C233.483 43.875 219.732 57.6255 219.732 74.5875C219.732 91.5495 233.483 105.3 250.445 105.3Z" fill="#4C4347"/>
+        
+                    <!-- corpo -->
+                    <rect class="forca-parte" style="display: none" x="248.251" y="105.3" width="4.3875" height="131.625" fill="#4C4347"/>
+        
+                    <!-- braço esquerdo -->
+                    <rect class="forca-parte" style="display: none"  x="249.055" y="104.203" width="4.38691" height="70.2" rx="2.19346" transform="rotate(30 249.055 104.203)" fill="#4C4347"/>
+        
+                    <!-- braço direito -->
+                    <rect class="forca-parte" style="display: none"  width="4.38666" height="70.2" rx="2.19333" transform="matrix(-0.866025 0.5 0.5 0.866025 251.758 104.203)" fill="#4C4347"/>
+        
+                    <!-- perna esquerda -->
+                    <rect class="forca-parte" style="display: none"  x="249.054" y="233.634" width="4.38901" height="70.2" rx="2.19451" transform="rotate(30 249.054 233.634)" fill="#4C4347"/>
+        
+                    <!-- perna direita -->
+                    <rect class="forca-parte" style="display: none"  width="4.39126" height="70.2" rx="2.19563" transform="matrix(-0.866025 0.5 0.5 0.866025 251.759 233.634)" fill="#4C4347"/>
+        
+        
+                </svg>
+        
+            </div>
 
-                <div class="forca-container">
-
-                    <svg width="288" height="351" viewBox="0 0 288 351" fill="none" xmlns="http://www.w3.org/2000/svg" class="forca">
-                        
-                        <rect x="0.675049" y="346.125" width="286.65" height="4.875" rx="2.4375" fill="#0A3871"/>
-                        <rect x="79.3325" width="173.306" height="4.3875" rx="2.19375" fill="#0A3871"/>
-                        <rect x="79.3325" width="4.3875" height="351" rx="2.19375" fill="#0A3871"/>
-                        <rect x="248.251" width="4.3875" height="48.2625" rx="2.19375" fill="#0A3871"/>
-                        
-                        <!-- cabeça -->
-                        <path class="forca-parte" style="display: none"  fill-rule="evenodd" clip-rule="evenodd" d="M250.445 100.913C264.984 100.913 276.77 89.1264 276.77 74.5875C276.77 60.0486 264.984 48.2625 250.445 48.2625C235.906 48.2625 224.12 60.0486 224.12 74.5875C224.12 89.1264 235.906 100.913 250.445 100.913ZM250.445 105.3C267.407 105.3 281.157 91.5495 281.157 74.5875C281.157 57.6255 267.407 43.875 250.445 43.875C233.483 43.875 219.732 57.6255 219.732 74.5875C219.732 91.5495 233.483 105.3 250.445 105.3Z" fill="#0A3871"/>
-                        
-                        <!-- corpo -->
-                        <rect class="forca-parte" style="display: none" x="248.251" y="105.3" width="4.3875" height="131.625" fill="#0A3871"/>
-                        
-                        <!-- braço esquerdo -->
-                        <rect class="forca-parte" style="display: none"  x="249.055" y="104.203" width="4.38691" height="70.2" rx="2.19346" transform="rotate(30 249.055 104.203)" fill="#0A3871"/>
-                        
-                        <!-- braço direito -->
-                        <rect class="forca-parte" style="display: none"  width="4.38666" height="70.2" rx="2.19333" transform="matrix(-0.866025 0.5 0.5 0.866025 251.758 104.203)" fill="#0A3871"/>
-                        
-                        <!-- perna esquerda -->
-                        <rect class="forca-parte" style="display: none"  x="249.054" y="233.634" width="4.38901" height="70.2" rx="2.19451" transform="rotate(30 249.054 233.634)" fill="#0A3871"/>
-                        
-                        <!-- perna direita -->
-                        <rect class="forca-parte" style="display: none"  width="4.39126" height="70.2" rx="2.19563" transform="matrix(-0.866025 0.5 0.5 0.866025 251.759 233.634)" fill="#0A3871"/>
-                        
-                        
-                    </svg>
-                    
+            <div class="show-dica">
+        
+            </div>
+        
+            <div class="teclado">
+                <div class="teclas p1">
+                    <button class="Q">Q</button>
+                    <button class="W">W</button>
+                    <button class="E">E</button>
+                    <button class="R">R</button>
+                    <button class="T">T</button>
+                    <button class="Y">Y</button>
+                    <button class="U">U</button>
+                    <button class="I">I</button>
+                    <button class="O">O</button>
+                    <button class="P">P</button>
                 </div>
-
-                    
-
-
+                <div class="teclas p2">
+                    <button class="A">A</button>
+                    <button class="S">S</button>
+                    <button class="D">D</button>
+                    <button class="F">F</button>
+                    <button class="G">G</button>
+                    <button class="H">H</button>
+                    <button class="J">J</button>
+                    <button class="K">K</button>
+                    <button class="L">L</button>
+                </div>
+                <div class="teclas p3">
+                    <button class="Z">Z</button>
+                    <button class="X">X</button>
+                    <button class="C">C</button>
+                    <button class="V">V</button>
+                    <button class="B">B</button>
+                    <button class="N">N</button>
+                    <button class="M">M</button>
+                </div>
             </div>
-            <p class="aviso">Erros:</p>
-            <div class="area-erros">
-                
-            </div>
-
-            <p class="aviso">Palavra Secreta:</p>
-            <div class="area-palavra-secreta">
-                
-                <div class="palavra-secreta"></div>
-            </div>
-
-            
 
             <div class="botoes-tela-jogando">
                 <button class="btn btn-um" id="novo-jogo" onclick="reiniciarJogo()">Novo jogo</button>
                 <button class="btn btn-dois" id="desistr-jogo" onclick="reiniciarJogo()">Desistir</button>
             </div>
-            
+
         </div>
 
         <div class="tela-add-palavra">
@@ -99,7 +118,7 @@
         <p>2022 &#169;  - Desenvolvido por <a href="https://linktr.ee/miicchhel" target="_blanck">Michel Ferreira</a></p>
     </footer>
 
-    <script src="./scripts/jogando.js"></script>
     <script src="./scripts/funcoes.js"></script>
+    <script src="./scripts/jogando.js"></script>
 </body>
 </html>

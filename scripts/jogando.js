@@ -1,38 +1,18 @@
-const palavras = ['HUMANO','RASTEJAR', 'DESLOCAMENTO', 'SERINGA', 'ROCHA', 'AVIAO', 'DESFILE', 'MACACO', 'PICADA', 'PIX', 'PROGRAMACAO', 'PROGRAMADOR', 'ARULA', 'CAVALO', 'CORINGA']
+let listaPalavras = ['LIVROS','PIZZA','CAFEZAL', 'FUTEBOL','CONFEITARIA']
+palavra = escolherPalavra(listaPalavras)
 
-const palavraSecreta = palavras[Math.floor(Math.random()*palavras.length)]
-
-const letrasErradas = []
-const letrasCorretas = []
+let teclado = document.querySelector('.teclado')
+let showDica = document.querySelector('.show-dica')
+let showBoneco = document.querySelectorAll('.forca-parte')
+let erros = 0
+let acertos = 0
+let parada = document.querySelector('.show-dica').innerText
 
 
 const iniciandoJogo = document.querySelector("#iniciar-jogo")
 iniciandoJogo.addEventListener("click",() => {
     
     mudarTela('.tela-inicio','.tela-jogando')
-    mostrarQuantidadeLetras()
-    
-    document.querySelector(".paracelular").value = ''
-    document.querySelector("html").addEventListener("click", () => {
-        document.querySelector(".paracelular").focus();
-    });
-
-    document.addEventListener("keydown", (evento) => {
-        const codigo = evento.keyCode; //intervalo[65-90]
-    
-        if(isLetra(codigo)){
-            const letra = evento.key.toUpperCase()
-    
-            if(letrasErradas.includes(letra)){
-                mostrarAvisoLetraRepetida()
-            }else{
-                if(palavraSecreta.includes(letra)){
-                    letrasCorretas.push(letra)
-                }else{
-                    letrasErradas.push(letra)
-                }
-            }
-            atualizarJogo()
-        }
-    })
+    mostrarDica(palavra)
+    ligarTeclado()
 })
