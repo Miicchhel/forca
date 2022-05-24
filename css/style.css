@@ -137,6 +137,48 @@ span{
     font-size: 2rem;
 }
 
+.aviso-final{
+    height: 100px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: blueviolet;
+
+    opacity: 1;
+    position: absolute;
+    top:40%
+}
+
+.aviso-final span{
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+
+.aviso-on{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.aviso-off{
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fechar{
+    width: 25px;
+    height: 20px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: #ff00009e;
+
+    position: absolute;
+    right: 0;
+}
+
+
 footer{
     height: 10%;
 

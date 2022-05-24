@@ -29,9 +29,9 @@ function analizarJogo(){
     parada = document.querySelector('.show-dica').innerText
     if(parada == palavra){
         setTimeout(()=>{
-            alert('Você venceu!')
+            venceu = 'Você venceu!'
+            mostrarAvisoFinal(venceu)
         },500)
-        reiniciarJogo()
     }
 }
 
@@ -76,12 +76,25 @@ function ligarTeclado(){
             else{
                 mostrarBoneco(erros)
                 setTimeout(()=>{
-                    alert('Você perdeu!')
+                    perdeu='Você perdeu!'
+                    mostrarAvisoFinal(perdeu)
                 },500)
-                reiniciarJogo()
             }
         }
         letraSelecionada.style.color = 'white'
     })
 
+}
+
+function mostrarAvisoFinal(frase){
+    let aviso = document.querySelector('.aviso-final')
+    aviso.innerHTML += `<span>${frase}</span>`
+    aviso.classList.remove('aviso-off')
+    aviso.classList.add('aviso-on')
+
+    const fechar = document.querySelector('.fechar')
+    fechar.addEventListener('click',()=>{
+        aviso.classList.add('aviso-off')
+        reiniciarJogo()
+    })
 }
